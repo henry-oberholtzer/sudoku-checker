@@ -70,14 +70,14 @@ describe('SudokuPuzzle', () => {
     test('should if first column array contains 1-9', () => {
         expect(reusableSudoku.columns.col1).toEqual([1,7,4,3,5,2,9,6,8]);
     });
-    
+
     test('should check if the first column array contains the numbers 1-9', () => {
         expect(reusableSudoku.checkColumn()).toEqual(true);
     });
 
-    // test('should return false when a number is duplicated in a column', () => {
-    //     expect(badSudoku.checkColumn()).toEqual(false);
-    // });
+    test('should return false when a number is duplicated in a column', () => {
+        expect(badSudoku.checkColumn()).toEqual(false);
+    });
 });
             // 1,5,2,4,8,9,3,7,6, 
             // 7,3,9,2,5,6,8,4,1,
