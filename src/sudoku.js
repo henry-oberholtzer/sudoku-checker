@@ -75,3 +75,21 @@ SudokuPuzzle.prototype.checkColumn = function () {
     }
     return true;
 };
+
+SudokuPuzzle.prototype.checkPuzzle = function () {
+    const testingArray = Object.keys(this);
+    return testingArray.every((testParam) => {
+        const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+        const itemKeys = Object.keys(this[testParam]);
+        for (const key of itemKeys) {
+            if (this[testParam][key]
+                .sort((a, b) => a - b)
+                .every((num, i) => num === numbers[i])) { 
+                /* empty */
+            } else {
+                return false;
+            }
+        }
+        return true;
+    });
+};

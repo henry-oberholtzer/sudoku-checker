@@ -64,7 +64,7 @@ describe('SudokuPuzzle', () => {
     });
 
     test('should check all rows for duplicate numbers per row', () => {
-      expect(badSudoku.checkRow()).toEqual(false);
+        expect(badSudoku.checkRow()).toEqual(false);
     });
 
     test('should if first column array contains 1-9', () => {
@@ -77,6 +77,11 @@ describe('SudokuPuzzle', () => {
 
     test('should return false when a number is duplicated in a column', () => {
         expect(badSudoku.checkColumn()).toEqual(false);
+    });
+
+    test('should return true when passed a solved sudoku', () => {
+        expect(reusableSudoku.checkPuzzle()).toEqual(true);
+        expect(badSudoku.checkPuzzle()).toEqual(false);
     });
 });
             // 1,5,2,4,8,9,3,7,6, 
