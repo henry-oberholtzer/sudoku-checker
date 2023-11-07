@@ -23,3 +23,8 @@ function SudokuPuzzle(
         row9: [i1, i2, i3, i4, i5, i6, i7, i8, i9]
     };
 }
+
+SudokuPuzzle.prototype.checkRow = function() {
+    const numbers = [1,2,3,4,5,6,7,8,9];
+    return this.rows.row1.sort((a,b) => a-b).every((num, i) => num === numbers[i]);
+};

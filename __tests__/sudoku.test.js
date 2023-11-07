@@ -39,4 +39,8 @@ describe('SudokuPuzzle', () => {
         expect(reusableSudoku.rows.row8).toEqual([6,2,5,9,4,8,1,3,7]);
         expect(reusableSudoku.rows.row9).toEqual([8,7,3,5,1,2,9,6,4]);
     });
+
+    test('should check if the first row array contains the numbers 1-9', () => {
+        expect(reusableSudoku.checkRow()).toEqual(true);
+    })
 });
