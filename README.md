@@ -1,8 +1,6 @@
 # (Application Name)
 
-#### (Brief Description of Application)
-
-#### By (Your Name Here)
+By Ravin Fisher, Henry Oberholtzer, Kim Robinson
 
 ## Technologies Used
 
