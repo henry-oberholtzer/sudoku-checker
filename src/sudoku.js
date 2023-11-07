@@ -43,7 +43,7 @@ function SudokuPuzzle(
         grid7: [g1, g2, g3, h1, h2, h3, i1, i2, i3],
         grid8: [g4, g5, g6, h4, h5, h6, i4, i5, i6],
         grid9: [g7, g8, g9, h7, h8, h9, i7, i8, i9],
-    }
+    };
 }
 
 SudokuPuzzle.prototype.checkRow = function () {
