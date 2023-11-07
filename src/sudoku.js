@@ -93,3 +93,20 @@ SudokuPuzzle.prototype.checkPuzzle = function () {
         return true;
     });
 };
+
+SudokuPuzzle.prototype.checkMissing = function () {
+    const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+    const rowKeys = Object.keys(this.rows);
+    const missingNum = [];
+    for (const key of rowKeys) {
+        numbers.forEach((num) => {
+            if (this.rows[key].includes(num)) {
+                /*empty*/
+            } else {
+                missingNum.push(key + ": " + num);
+            }
+        });
+        
+    }
+    return missingNum.toString();
+};

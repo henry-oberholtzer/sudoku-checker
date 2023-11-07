@@ -83,4 +83,8 @@ describe('SudokuPuzzle', () => {
         expect(reusableSudoku.checkPuzzle()).toEqual(true);
         expect(badSudoku.checkPuzzle()).toEqual(false);
     });
+
+    test('will return a string of the numbers that are missing', () => {
+        expect(badSudoku.checkMissing()).toEqual("row2: 3,row3: 8,row6: 8,row8: 9,row9: 9")
+    })
 });
