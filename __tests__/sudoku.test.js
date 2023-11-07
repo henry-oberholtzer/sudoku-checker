@@ -11,4 +11,11 @@ describe('SudokuPuzzle', () => {
         const newSudoku = new SudokuPuzzle(1,2,3,4,5,6,7,8,9);
         expect(newSudoku.rows.row1).toEqual([1,2,3,4,5,6,7,8,9]);
     });
+
+    test('should return an object with 18 numbers in two arrays', () => {
+        const newSudoku = new SudokuPuzzle(
+            1,2,3,4,5,6,7,8,9,
+            1,2,3,4,5,6,7,8,9);
+        expect(newSudoku.rows.row2).toEqual([1,2,3,4,5,6,7,8,9]);
+    });
 });
