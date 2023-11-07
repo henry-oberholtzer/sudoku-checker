@@ -24,7 +24,16 @@ function SudokuPuzzle(
     };
 }
 
-SudokuPuzzle.prototype.checkRow = function() {
-    const numbers = [1,2,3,4,5,6,7,8,9];
-    return this.rows.row1.sort((a,b) => a-b).every((num, i) => num === numbers[i]);
+SudokuPuzzle.prototype.checkRow = function () {
+    const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+    const rowKeys = Object.keys(this.rows);
+    for (const key of rowKeys) {
+        if (this.rows[key]
+            .sort((a, b) => a - b)
+            .every((num, i) => num === numbers[i])) {
+        } else {
+            return false;
+        }
+    }
+    return true;
 };

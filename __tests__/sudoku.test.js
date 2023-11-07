@@ -2,6 +2,7 @@ import SudokuPuzzle from './../src/sudoku.js';
 
 describe('SudokuPuzzle', () => {
     let reusableSudoku;
+    let badSudoku;
     beforeEach(() => {
         reusableSudoku = new SudokuPuzzle(
             1,5,2,4,8,9,3,7,6, 
@@ -13,6 +14,16 @@ describe('SudokuPuzzle', () => {
             9,1,4,6,3,7,5,8,2,
             6,2,5,9,4,8,1,3,7,
             8,7,3,5,1,2,9,6,4);
+        badSudoku = new SudokuPuzzle(
+                1,5,2,4,8,9,3,7,6, 
+                7,1,9,2,5,6,8,4,1,
+                4,6,1,3,7,1,2,9,5,
+                3,8,7,1,2,4,6,5,9,
+                5,9,1,7,6,3,4,2,8,
+                2,4,6,7,9,5,7,1,3,
+                9,1,4,6,3,7,5,8,2,
+                6,2,5,4,4,8,1,3,7,
+                8,7,3,5,1,2,2,6,4);
     });
 
     test('should return object with numbers in set array', () => {
@@ -42,10 +53,17 @@ describe('SudokuPuzzle', () => {
 
     test('should check if the first row array contains the numbers 1-9', () => {
         expect(reusableSudoku.checkRow()).toEqual(true);
-    })
+    });
 
     test('should return false when a number is duplicated in a row', () => {
-        const wrongRow = new SudokuPuzzle(1,2,3,1,5,6,7,8,9)
-        expect(wrongRow.checkRow()).toEqual(false);
-    })
+        expect(badSudoku.checkRow()).toEqual(false);
+    });
+
+    test('checks if all rows pass containing 1-9', () => {
+        expect(reusableSudoku.checkRow()).toEqual(true);
+    });
+
+    test('should check all rows for duplicate numbers per row', () => {
+      expect(badSudoku.checkRow()).toEqual(false);
+    });
 });
