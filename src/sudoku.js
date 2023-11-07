@@ -21,6 +21,17 @@ function SudokuPuzzle(
         row7: [g1, g2, g3, g4, g5, g6, g7, g8, g9],
         row8: [h1, h2, h3, h4, h5, h6, h7, h8, h9],
         row9: [i1, i2, i3, i4, i5, i6, i7, i8, i9]
+    },
+    this.columns = {
+        col1: [a1, b1, c1, d1, e1, f1, g1, h1, i1],
+        col2: [a2, b2, c2, d2, e2, f2, g2, h2, i2],
+        // col3: [a3, b2, c2, d2, e2, f2, g2, h2, i2],
+        // col4:
+        // col5:
+        // col6:
+        // col7:
+        // col8:
+        // col9: 
     };
 }
 
@@ -30,10 +41,15 @@ SudokuPuzzle.prototype.checkRow = function () {
     for (const key of rowKeys) {
         if (this.rows[key]
             .sort((a, b) => a - b)
-            .every((num, i) => num === numbers[i])) {
+            .every((num, i) => num === numbers[i])) { 
+            /* empty */
         } else {
             return false;
         }
     }
     return true;
+};
+
+SudokuPuzzle.prototype.checkColumn = function () {
+    // empty
 };
