@@ -4,7 +4,7 @@ describe('SudokuPuzzle', () => {
     let reusableSudoku;
     beforeEach(() => {
         reusableSudoku = new SudokuPuzzle(
-            1,5,2,4,8,9,3,7,6,
+            1,5,2,4,8,9,3,7,6, 
             7,3,9,2,5,6,8,4,1,
             4,6,8,3,7,1,2,9,5,
             3,8,7,1,2,4,6,5,9,
@@ -42,5 +42,10 @@ describe('SudokuPuzzle', () => {
 
     test('should check if the first row array contains the numbers 1-9', () => {
         expect(reusableSudoku.checkRow()).toEqual(true);
+    })
+
+    test('should return false when a number is duplicated in a row', () => {
+        const wrongRow = new SudokuPuzzle(1,2,3,1,5,6,7,8,9)
+        expect(wrongRow.checkRow()).toEqual(false);
     })
 });
