@@ -1,4 +1,4 @@
-# (Application Name)
+# Sudoku Checker
 
 By Ravin Fisher, Henry Oberholtzer, Kim Robinson
 
@@ -12,15 +12,13 @@ By Ravin Fisher, Henry Oberholtzer, Kim Robinson
 
 ## Setup/Installation Requirements
 
-* _This is a great place_
-* _to list setup instructions_
-* _in a simple_
-* _easy-to-understand_
-* _format_
+* Download this Git Repository to your desktop, open in terminal, run "npm install" and "npm run start"
 
 ## Known Bugs
 
-* _Any known issues_
-* _should go here_
+* UI is not ideal
+* Needs to generate Sudokus for user
 
 ## License
+
+GNU GPL v3
